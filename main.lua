@@ -20,9 +20,9 @@ for i, v in pairs(getgc(true)) do
         end
     end
     if typeof(v) == "table" and rawget(v, "Remote") then
-        v.Remote.Name = v.Name -- simple remote naming (tbh i could have used another method)
-        -- i sticked to this method because i used it on the first and forgor to replace it :Skull:
-        -- contact me for better method
+		if v.Remote.Name ~= v.Name then
+        	v.Remote.Name = v.Name
+		end
     end
 end
 local oldnamecall -- anti kick because cw kicks u after u rename the remotes
